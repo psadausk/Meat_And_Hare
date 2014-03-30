@@ -19,7 +19,7 @@ public class PlayerController: MonoBehaviour {
 
     private PlayerPhysics m_playerPhysics;
     private GunController m_gunController;
-    public GameObject Gun;
+    public GameObject Gun;    
 
 
     public void Start() {
@@ -54,10 +54,7 @@ public class PlayerController: MonoBehaviour {
         this.m_playerPhysics.Move(this.m_moveAmount * Time.deltaTime);
 
         ////Fire gun
-        //if ( Input.GetButton("Fire1") ) {
-        //    //this.m_nextFilre = Time.time + this.FireRate;
-        //    //Instantiate(this.Bullet, this.BulletSpawn.position, this.BulletSpawn.rotation);
-        //}
+        
 
         //Have the gun look at the mouse
         

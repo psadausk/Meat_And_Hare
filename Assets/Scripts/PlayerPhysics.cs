@@ -50,11 +50,12 @@ public class PlayerPhysics : MonoBehaviour {
                 if ( distance > this.m_skin ) {
                     deltaY = distance * dir - this.m_skin * dir;
                 } else {
-                    deltaY = 0;
+                    deltaY = this.m_skin;
                 }
                 this.Grounded = true;
                 break;
             }
+            Debug.Log(deltaY);
         }
 
         MovementStopped = false;
@@ -70,7 +71,7 @@ public class PlayerPhysics : MonoBehaviour {
                 if ( distance > this.m_skin ) {
                     deltaX = distance * dir - this.m_skin * dir;
                 } else {
-                    deltaX = 0;
+                    deltaX = this.m_skin;
                 }
                 this.MovementStopped = true;
                 break;
