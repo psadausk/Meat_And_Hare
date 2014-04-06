@@ -2,19 +2,20 @@
 using System.Collections;
 using Assets.Scripts.Common;
 
-[RequireComponent(typeof(PlayerPhysics))]
-[RequireComponent(typeof(GunController))]
+//[RequireComponent(typeof(PlayerPhysics))]
+//[RequireComponent(typeof(GunController))]
 public class PlayerController: MonoBehaviour {
 
-    public float Speed = 8;
-    public float Acceleration = 30;
-    public float Gravity = 20;
-    public float JumpHeight = 12;
 
+    public float MoveForce = 5000f;
+    public float JumpForce = .1f;
+    public float MaxSpeed = 20f;
+    public bool CanJump = true;
+    public bool Jump = false;
 
-    private float m_currentSpeed;
-    private float m_targerSpeed;
-    private Vector2 m_moveAmount;
+    //private float m_currentSpeed;
+    //private float m_targerSpeed;
+    //private Vector2 m_moveAmount;
 
 
     private PlayerPhysics m_playerPhysics;
@@ -23,45 +24,44 @@ public class PlayerController: MonoBehaviour {
 
 
     public void Start() {
-        this.m_playerPhysics = this.GetComponent<PlayerPhysics>();
-        this.m_gunController = this.GetComponent<GunController>();
+        //this.m_playerPhysics = this.GetComponent<PlayerPhysics>();
+        //this.m_gunController = this.GetComponent<GunController>();
     }
 
 
     void Update() {
-        this.m_targerSpeed = Input.GetAxis("Horizontal") * this.Speed;
-        this.m_currentSpeed = Utility.IncrementTowards(this.m_currentSpeed, this.m_targerSpeed, this.Acceleration);
-
-        //Is on the ground
-        if ( this.m_playerPhysics.Grounded ) {
-            this.m_moveAmount.y = 0;
-
-            // Jump
-            if ( Input.GetButtonDown("Jump") ) {
-                m_moveAmount.y = JumpHeight;
-            }
-        }
-
-        //Is hitting a wall
-        if ( this.m_playerPhysics.MovementStopped ) {
-            this.m_targerSpeed = 0;
-            this.m_currentSpeed = 0;
-        }
-
-        //Update movement
-        this.m_moveAmount.x = this.m_currentSpeed;
-        this.m_moveAmount.y -= this.Gravity * Time.deltaTime; ;
-        this.m_playerPhysics.Move(this.m_moveAmount * Time.deltaTime);
-
-        ////Fire gun
-        
-
-        //Have the gun look at the mouse
-        
+        if ( Input.GetButtonDown("Jump") && CanJump )
+            Jump = true;
     }
 
     void FixedUpdate() {
-        
+        var x = Input.GetAxis("Horizontal");
+        // If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
+        //if ( x * rigidbody2D.velocity.x < MaxSpeed )
+            // ... add a force to the player.
+        if(Input.GetAxis("Horizontal") !=  0 )
+            rigidbody2D.AddForce(Vector2.right * Mathf.Sign(x) * MoveForce * Time.deltaTime);
+
+        // If the player's horizontal velocity is greater than the maxSpeed...
+        //if ( Mathf.Abs(rigidbody2D.velocity.x) > MaxSpeed )
+        //    // ... set the player's velocity to the maxSpeed in the x axis.
+        //    rigidbody2D.velocity = new Vector2(Mathf.Sign(rigidbody2D.velocity.x) * MaxSpeed, rigidbody2D.velocity.y);
+
+
+        if ( Jump ) {
+            // Set the Jump animator trigger parameter.
+            //anim.SetTrigger("Jump");
+
+            //// Play a random jump audio clip.
+            //int i = Random.Range(0, jumpClips.Length);
+            //AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+
+            //// Add a vertical force to the player.
+            rigidbody2D.AddForce(new Vector2(0f, JumpForce));
+
+            // Make sure the player can't jump again until the jump conditions from Update are satisfied.
+            Jump = false;
+        }
     }
 
 

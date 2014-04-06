@@ -213,3 +213,27 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+.DS_Store
+Library/AssetImportState
+Library/AssetServerCacheV3
+Library/FailedAssetImports.txt
+Library/ScriptAssemblies
+Library/ScriptMapper
+Library/assetDatabase3
+Library/cache
+Library/expandedItems
+Library/metadata
+Library/previews
+Library/guidmapper
+Temp
+*.csproj
+*.pidb
+*.sln
+Library/CurrentLayout.dwlt
+Library/ScriptAssemblies/Assembly-CSharp.dll
+Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+Library/assetDatabase3
+Library/guidmapper
+Library/metadata/0d/0ddbc0aef302e0a459bb414f8b46f339
+Library/metadata/64/64c4354caaa45184fb220d866abbc675

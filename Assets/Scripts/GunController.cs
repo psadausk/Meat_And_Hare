@@ -15,11 +15,7 @@ public class GunController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        //if ( Input.GetButton("Fire1") && Time.time > this.m_nextFilre ) {
-        //    this.m_nextFilre = Time.time + this.FireRate;
-        //    Instantiate (this.Bullet, this.BulletSpawn.position, this.BulletSpawn.rotation);
-        //}
+	void Update () {    
 
         if ( Input.GetButton("Fire1") && Time.time > this.m_nextFilre ) {
             this.m_nextFilre = Time.time + this.FireRate;
