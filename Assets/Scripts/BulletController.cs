@@ -26,6 +26,10 @@ public class BulletController : MonoBehaviour {
 	}
 
     void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.GetComponent<BulletController>() != null){
+            return;
+        }
+
         Destroy(gameObject);
 
         var impactVector = collision.relativeVelocity;
@@ -38,7 +42,7 @@ public class BulletController : MonoBehaviour {
             } else {
                 gibblet = Instantiate(Guts, this.transform.position, Quaternion.identity) as GameObject;
             }
-            gibblet.rigidbody2D.AddForce(new Vector2(Random.Range(200, 1000), Random.Range(200, 1000)));
+            gibblet.rigidbody2D.AddForce(new Vector2(Random.Range(20, 100), Random.Range(20, 100)));
             gibblet.rigidbody2D.angularVelocity = Random.Range(2, 5);
         }
 
