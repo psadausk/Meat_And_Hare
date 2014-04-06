@@ -7,6 +7,7 @@ public class GunController : MonoBehaviour {
     public GameObject Bullet;
     public Transform BulletSpawn;
 
+
     private float m_nextFilre;
 
 	// Use this for initialization
@@ -16,11 +17,12 @@ public class GunController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {    
-
-        if ( Input.GetButton("Fire1") && Time.time > this.m_nextFilre ) {
-            this.m_nextFilre = Time.time + this.FireRate;
-            Instantiate(this.Bullet, this.BulletSpawn.position, this.BulletSpawn.rotation);
-        }
+		
+		if ( Input.GetButton("Fire1") && Time.time > this.m_nextFilre ) {
+			this.m_nextFilre = Time.time + this.FireRate;
+			Instantiate(this.Bullet, this.BulletSpawn.position, this.BulletSpawn.rotation);
+			this.audio.Play();
+		}
 
 
 

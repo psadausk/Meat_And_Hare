@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 202244535}
   - 114: {fileID: 202244536}
+  - 82: {fileID: 202244537}
   m_Layer: 0
   m_Name: GunBarrel
   m_TagString: Untagged
@@ -112,9 +113,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c4354caaa45184fb220d866abbc675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireRate: .300000012
+  FireRate: .0500000007
   Bullet: {fileID: 100000, guid: 2ed8f378a2526e94fa5c56029075bd2f, type: 2}
   BulletSpawn: {fileID: 202244535}
+--- !u!82 &202244537
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 202244534}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 7e14473d4ab3e244cafe17e6d83303cd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &771768308
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,17 +272,17 @@ PolygonCollider2D:
       - {x: 11.9921875, y: 4.9609375}
       - {x: 11.640625, y: 4.3359375}
       - {x: 11.4453125, y: 3.7890625}
-      - {x: 11.09375, y: 3.0859375}
-      - {x: 10.9765625, y: 2.734375}
-      - {x: 10.78125, y: 1.953125}
-      - {x: 10.9375, y: 1.796875}
-      - {x: 10.6640625, y: 1.5234375}
-      - {x: 10.2734375, y: 1.3671875}
-      - {x: 9.5703125, y: .8203125}
-      - {x: 9.6484375, y: .6640625}
-      - {x: 9.609375, y: -1.640625}
-      - {x: 9.53125, y: -1.875}
-      - {x: 9.59953499, y: -2.31949496}
+      - {x: 11.4003267, y: 3.65678477}
+      - {x: 11.2831402, y: 2.86610889}
+      - {x: 11.2849131, y: 2.1946373}
+      - {x: 11.3097725, y: 2.08229852}
+      - {x: 11.2553196, y: 1.89668369}
+      - {x: 11.3026619, y: 3.07972908}
+      - {x: 11.2564888, y: 1.34724832}
+      - {x: 11.2032242, y: .115170941}
+      - {x: 11.18606, y: -1.02586651}
+      - {x: 11.195528, y: -1.37001979}
+      - {x: 11.1324215, y: -2.6488297}
       - {x: 11.0997744, y: -2.37788081}
       - {x: 11.100667, y: -2.70247483}
       - {x: 14.8918791, y: -3.74874973}
@@ -233,23 +292,22 @@ PolygonCollider2D:
       - {x: 17.578125, y: -5}
       - {x: 17.6953125, y: -4.9609375}
       - {x: 17.734375, y: -5}
-    - - {x: 11.7578125, y: -3.359375}
+    - - {x: 13.4220896, y: -3.3154633}
       - {x: 14.5279722, y: -2.11736965}
-      - {x: 11.7578125, y: -3.203125}
-    - - {x: 10.9765625, y: -2.734375}
-      - {x: 11.0546875, y: -2.7734375}
-      - {x: 11.09375, y: -3.2421875}
+      - {x: 12.1738815, y: -2.93965673}
+    - - {x: 11.1517496, y: -2.64655232}
+      - {x: 11.4488573, y: -2.53192496}
+      - {x: 11.5536156, y: -2.75916314}
     - - {x: 10.234375, y: -2.34375}
       - {x: 10.5859375, y: -2.34375}
       - {x: 10.1953125, y: -2.34375}
       - {x: 9.921875, y: -2.34375}
-    - - {x: 10, y: -.15625}
-      - {x: 10.4296875, y: .46875}
-      - {x: 11.1328125, y: -.234375}
-    - - {x: 10, y: .5859375}
-      - {x: 9.921875, y: .46875}
-      - {x: 9.9609375, y: .390625}
-      - {x: 10, y: .4296875}
+    - - {x: 11.1825132, y: .678065181}
+      - {x: 11.1742325, y: .337016046}
+      - {x: 11.1985073, y: -.234375045}
+    - - {x: 11.2795744, y: 1.78608966}
+      - {x: 11.1653481, y: .193024009}
+      - {x: 11.2263079, y: .824889421}
 --- !u!212 &837516082
 SpriteRenderer:
   m_ObjectHideFlags: 0
