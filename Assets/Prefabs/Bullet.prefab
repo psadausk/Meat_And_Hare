@@ -101,8 +101,8 @@ MonoBehaviour:
   LifeTime: 5
   NumberOfEmmisions: 20
   BloodChance: .699999988
-  Blood: {fileID: 100000, guid: 639ed879470489c4892522ef093d783c, type: 2}
-  Guts: {fileID: 100000, guid: 110c205126505df4fbe843558b8ba8c7, type: 2}
+  Blood: {fileID: 100000, guid: 34a3aed58c3ecac4cb9f12bdb404860a, type: 2}
+  Guts: {fileID: 100000, guid: 5b5e96bf42b9b9f4ea772cc5025f6d01, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
