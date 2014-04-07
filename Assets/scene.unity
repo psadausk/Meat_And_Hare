@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 202244534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.292324066, y: .156535149, z: -6}
+  m_LocalPosition: {x: 1.67595863, y: .478618622, z: -6}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1932682356}
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c4354caaa45184fb220d866abbc675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireRate: .0500000007
+  FireRate: .100000001
   Bullet: {fileID: 100000, guid: 2ed8f378a2526e94fa5c56029075bd2f, type: 2}
   BulletSpawn: {fileID: 202244535}
 --- !u!82 &202244537
@@ -184,6 +184,7 @@ GameObject:
   - 4: {fileID: 771768311}
   - 212: {fileID: 771768310}
   - 61: {fileID: 771768309}
+  - 61: {fileID: 771768312}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -232,10 +233,21 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771768308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.80820322, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.0639801, y: -1.80820274, z: 0}
+  m_LocalScale: {x: 1.2531991, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!61 &771768312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771768308}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 10}
+  m_Center: {x: -13, y: 0}
 --- !u!1 &837516080
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,8 +400,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1334491767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.0639801, y: 0, z: 10}
+  m_LocalScale: {x: 1.2531991, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1549509174

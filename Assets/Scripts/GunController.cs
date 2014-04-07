@@ -14,7 +14,7 @@ public class GunController : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update () {    
 		
@@ -22,8 +22,8 @@ public class GunController : MonoBehaviour {
 			this.m_nextFilre = Time.time + this.FireRate;
 			Instantiate(this.Bullet, this.BulletSpawn.position, this.BulletSpawn.rotation);
 			this.audio.Play();
-		}
 
+		}
 
 
         //Debug.Log(this.transform.position);
