@@ -7,6 +7,7 @@ Library/ScriptAssemblies/*
 Library/cache/*
 Library/metadata/*
 Library/*
+Library/
 !Library/*.asset
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
