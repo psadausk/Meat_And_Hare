@@ -113,6 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0025af4e3f4065742b90642075f0d9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireRate: .100000001
+  Bullet: {fileID: 100000, guid: 2ed8f378a2526e94fa5c56029075bd2f, type: 2}
+  BulletIntialVelocity: 20000
+  BulletSpawn: {fileID: 202244535}
 --- !u!82 &202244537
 AudioSource:
   m_ObjectHideFlags: 0
