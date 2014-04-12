@@ -1,23 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BulletController : MonoBehaviour {
+public class ChainGunBullerController : BulletController {
 
-    public float Speed = 20000f;
-    public Quaternion Angle;
-    public float LifeTime = 20;
+    public override float LifeTime { get { return 20000f; } }
 
-    private Vector2 m_movement;
-
-    public int NumberOfEmmisions = 20;
+	public int NumberOfEmmisions = 20;
     public float BloodChance = .7f;
     public GameObject Blood;
     public GameObject Guts;
 
 	// Use this for initialization
 	void Start () {
-        this.m_movement = new Vector2();
-        this.rigidbody2D.AddForce(Vector2.right * this.Speed);
+        //this.rigidbody2D.AddForce(Vector2.right * this.Speed);
         Destroy(gameObject, this.LifeTime);
 	}
 	
@@ -25,8 +20,8 @@ public class BulletController : MonoBehaviour {
 	void Update () {        
 	}
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.GetComponent<BulletController>() != null){
+    protected override void OnCollisionEnter2D(Collision2D collision) {
+        if ( collision.gameObject.GetComponent<BulletController>() != null ) {
             return;
         }
 
@@ -38,13 +33,12 @@ public class BulletController : MonoBehaviour {
 
             GameObject gibblet;
             if ( rand < this.BloodChance ) {
-                gibblet = Instantiate(Blood, this.transform.position, Quaternion.identity) as GameObject;                
+                gibblet = Instantiate(Blood, this.transform.position, Quaternion.identity) as GameObject;
             } else {
                 gibblet = Instantiate(Guts, this.transform.position, Quaternion.identity) as GameObject;
             }
             gibblet.rigidbody2D.AddForce(new Vector2(Random.Range(20, 100), Random.Range(20, 100)));
             gibblet.rigidbody2D.angularVelocity = Random.Range(2, 5);
         }
-
     }
 }
